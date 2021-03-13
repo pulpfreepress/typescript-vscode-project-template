@@ -15,7 +15,7 @@ __check-tools:
 check-tools: ## check if required tools are installed
 	@$(MAKE) __check-tools CONFIRM=1
 clean: ## Remove dist dir
-	@rm -r ./dist
+	@rm -rf ./dist
 lint: ## Run lint 
 	npm run-script lint
 build-all: clean lint ## Build everything -- Runs root-level tsconfig.json file
