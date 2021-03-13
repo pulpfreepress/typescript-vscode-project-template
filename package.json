@@ -19,9 +19,10 @@
   "devDependencies": {
     "@types/jest": "*",
     "@types/node": "*",
-    "@typescript-eslint/eslint-plugin": "*",
-    "@typescript-eslint/parser": "*",
-    "eslint": "*",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint": "^7.22.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-plugin-jest": "*",
     "jest": "*",
     "jest-junit": "*",
