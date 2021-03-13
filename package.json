@@ -17,6 +17,43 @@
   },
   "homepage": "https://github.com/pulpfreepress/typescript-vscode-project-template#readme",
   "devDependencies": {
-    "lite-server": "*"
+    "@types/jest": "*",
+    "@types/node": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "eslint": "*",
+    "eslint-plugin-jest": "*",
+    "jest": "*",
+    "jest-junit": "*",
+    "lite-server": "*",
+    "prettier": "*",
+    "ts-jest": "*",
+    "typescript": "*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "test/**/*.ts",
+      "!test/**/*.d.ts",
+      "!test/**/index.ts"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/test/(.*))\\.test.ts$",
+    "testEnvironment": "jsdom",
+    "reporters": [
+      "default"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  },
+  "jest-junit": {
+    "outputDirectory": "test-reports",
+    "outputName": "jest.xml"
   }
 }
