@@ -1,0 +1,59 @@
+{
+  "name": "typescript-vscode-project-template",
+  "version": "1.0.0",
+  "description": "Typescript Project Template",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pulpfreepress/typescript-vscode-project-template.git"
+  },
+  "author": "Rick Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pulpfreepress/typescript-vscode-project-template/issues"
+  },
+  "homepage": "https://github.com/pulpfreepress/typescript-vscode-project-template#readme",
+  "devDependencies": {
+    "@types/jest": "*",
+    "@types/node": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "eslint": "*",
+    "eslint-plugin-jest": "*",
+    "jest": "*",
+    "jest-junit": "*",
+    "lite-server": "*",
+    "prettier": "*",
+    "ts-jest": "*",
+    "typescript": "*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "test/**/*.ts",
+      "!test/**/*.d.ts",
+      "!test/**/index.ts"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/test/(.*))\\.test.ts$",
+    "testEnvironment": "jsdom",
+    "reporters": [
+      "default"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  },
+  "jest-junit": {
+    "outputDirectory": "test-reports",
+    "outputName": "jest.xml"
+  }
+}
