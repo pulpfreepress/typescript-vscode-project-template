@@ -4,7 +4,9 @@
   "description": "Typescript Project Template",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src/{,**/}*.ts",
+    "test": "jest",
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "eslint-plugin-jest": "*",
     "jest": "*",
     "jest-junit": "*",
+    "jsdoc": "^3.6.6",
     "lite-server": "*",
     "prettier": "*",
     "ts-jest": "*",
