@@ -3,7 +3,6 @@ CONFIRM=0
 MAKEFLAGS+= --no-print-directory
 TOOLS=aws node git
 VERSION=`git describe --tags --always`
-
 .PHONY: run-tests, clean
 help:
 	@grep -h -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -16,8 +15,15 @@ check-tools: ## check if required tools are installed
 	@$(MAKE) __check-tools CONFIRM=1
 clean: ## Remove dist dir
 	@rm -rf ./dist
+	@rm -f ./test/*.js
+	@rm -f ./test/*.d.ts
+	@rm -rf ./coverage
 lint: ## Run lint 
-	npm run-script lint
+	@npm run-script lint
+pretty: ## Run Prettier
+	npx prettier -w src/**/*.ts
+generate-types: clean lint ## Generate type def (*.d.ts) files and write to ./src/types directory
+	npx tsc src/**/*.ts --declaration --emitDeclarationOnly --outDir ./src/types
 build-all: clean lint ## Build everything -- Runs root-level tsconfig.json file
 	@tsc -b
 run-tests: build-all ## Run all tests

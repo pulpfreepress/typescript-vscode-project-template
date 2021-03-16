@@ -70,7 +70,7 @@
   },
   "files": [ ],
   "references": [
-    { "path": "src"},
-    { "path": "test"}
+    { "path": "src"}
+    
   ]
 }
